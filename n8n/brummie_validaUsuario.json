@@ -1,0 +1,230 @@
+{
+  "active": true,
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "SimulaDB",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SimulaDB": {
+      "main": [
+        [
+          {
+            "node": "IF",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2023-11-03T17:10:33.600Z",
+  "id": "ZTybCdOjuAMInILH",
+  "meta": null,
+  "name": "brummie_validaUsuario",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "validaUsuario",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "id": "961b22cd-2d6f-47ef-b09d-913e7d6b7ada",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        80,
+        400
+      ],
+      "webhookId": "b4acc13c-1d31-4ecf-8c2d-5b4951e69299"
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "user",
+              "stringValue": "granato"
+            },
+            {
+              "name": "senha",
+              "stringValue": "123"
+            },
+            {
+              "name": "token",
+              "stringValue": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "d63a0251-6207-4ff3-a4c7-7564266e938c",
+      "name": "SimulaDB",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        420,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.headers.user }}",
+              "value2": "={{ $json.user }}"
+            },
+            {
+              "value1": "={{ $json.headers.password }}",
+              "value2": "={{ $json.senha }}"
+            },
+            {
+              "value1": "={{ $json.headers.token }}",
+              "value2": "={{ $json.token }}"
+            }
+          ]
+        }
+      },
+      "id": "0e11e781-0f4f-490f-b07a-db51eee0ca3b",
+      "name": "IF",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        640,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "Result",
+              "type": "booleanValue"
+            },
+            {
+              "name": "user",
+              "stringValue": "Irineu Granato"
+            }
+          ]
+        },
+        "include": "none",
+        "options": {}
+      },
+      "id": "72b3f526-0db6-4721-8532-403d6643bf83",
+      "name": "Edit Fields",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        940,
+        240
+      ]
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "Result",
+              "type": "booleanValue",
+              "booleanValue": "false"
+            },
+            {
+              "name": "user"
+            }
+          ]
+        },
+        "include": "none",
+        "options": {}
+      },
+      "id": "3185fe60-86a0-48d6-9a13-7f989c5ec25d",
+      "name": "Edit Fields1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        940,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "9e47eec0-76f0-4810-af1a-3fb82309c3d2",
+      "name": "Respond to Webhook",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [
+        1220,
+        380
+      ]
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1",
+    "saveDataSuccessExecution": "none",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2023-12-01T14:11:34.706Z",
+      "updatedAt": "2023-12-01T14:11:34.706Z",
+      "id": "f5FqedEavoPE7lXT",
+      "name": "BRUMMIE"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2024-01-09T17:50:47.667Z",
+  "versionId": "9dabc5da-d5de-4256-9db6-dcde303d1d58"
+}
