@@ -1,0 +1,1964 @@
+{
+  "active": false,
+  "connections": {
+    "IF": {
+      "main": [
+        [],
+        [
+          {
+            "node": "NoOp4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SplitInBatches-Advanced": {
+      "main": [
+        [],
+        [
+          {
+            "node": "IF1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "NoOp4": {
+      "main": [
+        [
+          {
+            "node": "SplitInBatches-Advanced",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "MySQL4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request1": {
+      "main": [
+        [
+          {
+            "node": "XML",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "XML": {
+      "main": [
+        [
+          {
+            "node": "Item Lists",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists": {
+      "main": [
+        [
+          {
+            "node": "Code1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code1": {
+      "main": [
+        [
+          {
+            "node": "TotalContentFiedsReceived",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF1": {
+      "main": [
+        [
+          {
+            "node": "SetObjetoLoop",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "MySQL3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "IF",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MySQL": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Não Filtrados": {
+      "main": [
+        [
+          {
+            "node": "IF5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SplitInBatches-Advanced1": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Code2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MySQL1": {
+      "main": [
+        [
+          {
+            "node": "MySQL2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF3": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request4",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "SplitInBatches-Advanced1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MySQL2": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SE CONTEM + DE UMA TAG": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "MySQL1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MySQL6": {
+      "main": [
+        [
+          {
+            "node": "MySQL7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MySQL7": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request5": {
+      "main": [
+        [
+          {
+            "node": "IF3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code2": {
+      "main": [
+        [
+          {
+            "node": "SE CONTEM + DE UMA TAG",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Item Lists1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Item Lists1": {
+      "main": [
+        [
+          {
+            "node": "SplitInBatches-Advanced3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SplitInBatches-Advanced3": {
+      "main": [
+        [],
+        [
+          {
+            "node": "IF2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request3": {
+      "main": [
+        [
+          {
+            "node": "IF4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF4": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request5",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "NoOp1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "NoOp1": {
+      "main": [
+        [
+          {
+            "node": "SplitInBatches-Advanced3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request4": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request7": {
+      "main": [
+        [
+          {
+            "node": "IF3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF2": {
+      "main": [
+        [
+          {
+            "node": "MySQL6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF5": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request4",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "SplitInBatches-Advanced1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "IF",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SetValorArquivo": {
+      "main": [
+        [
+          {
+            "node": "Não Filtrados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MySQL3": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SplitInBatches-Advanced-tags": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Code3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "SplitInBatches-Advanced-tags",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "LoopTags": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Filter",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF7": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "NoOp",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "NoOp": {
+      "main": [
+        [
+          {
+            "node": "LoopTags",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "TotalContentFiedsReceived": {
+      "main": [
+        [
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MySQL5": {
+      "main": [
+        [
+          {
+            "node": "LoopTags",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter": {
+      "main": [
+        [
+          {
+            "node": "IF7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SetObjetoLoop": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        []
+      ]
+    },
+    "MySQL4": {
+      "main": [
+        [
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-01-10T16:53:46.280Z",
+  "id": "hBpdymWcUbJe7beK",
+  "meta": null,
+  "name": "Serviço Gravação Registros RHS V3",
+  "nodes": [
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{$node[\"SplitInBatches-Advanced\"].context[\"noItemsLeft\"]}}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "22eca5bd-b707-40ee-be23-afe985290ff2",
+      "name": "IF",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -240,
+        1260
+      ]
+    },
+    {
+      "parameters": {
+        "batchSize": "={{ $json.total }}",
+        "options": {}
+      },
+      "id": "7835bcef-4996-4f1b-83b5-956b17eaa9c7",
+      "name": "SplitInBatches-Advanced",
+      "type": "n8n-nodes-splitinbatches-advanced.splitInBatchesAdvanced",
+      "typeVersion": 1,
+      "position": [
+        -2000,
+        1220
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "abf2d073-5427-4c1d-b421-5a4b19bf8cf4",
+      "name": "NoOp4",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        0,
+        1720
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "gravaleadsMYSQLv3",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "id": "8637f02e-779d-4b3f-a83c-6346c97ce79c",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        -3600,
+        1220
+      ],
+      "webhookId": "c5b1d00f-44a5-45e2-ab75-8b1be2611876"
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.body.url }}",
+        "options": {}
+      },
+      "id": "4b851842-fc84-4c28-91bf-0c0452c1539b",
+      "name": "HTTP Request1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        -3360,
+        1100
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "9fad3640-7447-4a05-9af5-bf5ceae86e0f",
+      "name": "XML",
+      "type": "n8n-nodes-base.xml",
+      "typeVersion": 1,
+      "position": [
+        -3180,
+        1100
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "ARQUIVO.REGISTRO",
+        "include": "allOtherFields",
+        "options": {}
+      },
+      "id": "fe6efbb6-c4aa-44a9-a3e5-321b1791d84b",
+      "name": "Item Lists",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 2.1,
+      "position": [
+        -2980,
+        1100
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "var mTotal =0;\n\nfor (const item of $input.all()) {\n mTotal = mTotal +1;\n}\n\n//return $input.all();\n\nconst requiredKeys = [\n  'PRODNUM',\n  'VERSAO',\n  'SITUACAO',\n  'ORGAO',\n  'CODORGAO',\n  'COMPLORGAO',\n  'ENDERECO',\n  'COMPLENDERECO',\n  'FONE',\n  'FAX',\n  'OBSORGAO',\n  'CIDADE',\n  'UF',\n  'EDITAL',\n  'MODALIDADE',\n  'TPPRAZO',\n  'PRAZO',\n  'VLESTIMADO',\n  'OBJETO',\n  'PREDITAL',\n  'BANCOPG',\n  'SITE',\n  'LINK',\n  'OBS',\n  'CODIGOFILTRO',\n  'LINK1',\n];\n\nvar mContador =0;\n\nitems.forEach(item => {\n  requiredKeys.forEach(key => {\n    if ([undefined, ''].includes(item.json[key])) {\n      item.json[key] = '-';\n    }\n  });\n  mContador = mContador + 1; \n  item.json.contador = mContador;\n  item.json.total = mTotal;\n  \n});\n\nreturn items;"
+      },
+      "id": "03724897-310d-44c3-833d-d62e7aea3a0c",
+      "name": "Code1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        -2800,
+        1100
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://leads.montreal.com.br/api/1.1/wf/gravainfoarquivoprocrhs",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "nome_arquivo",
+              "value": "={{ $node[\"Webhook\"].json[\"body\"][\"FileName\"].replace(\".xml\",\".txt\") }}"
+            },
+            {
+              "name": "qtd_arquivo",
+              "value": "={{ $node.Code1.json[\"total\"] }}\n\n"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "7e9c46e0-b689-4368-84ef-4f12cd1a5654",
+      "name": "HTTP Request4",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        6220,
+        1200
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.CIDADE }}",
+              "operation": "isNotEmpty"
+            }
+          ]
+        }
+      },
+      "id": "3ac6e03e-033d-4c7b-8bcd-fa8737ef27b4",
+      "name": "IF1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -1720,
+        1240
+      ]
+    },
+    {
+      "parameters": {
+        "table": {
+          "__rl": true,
+          "value": "RHS_lancamentos",
+          "mode": "list",
+          "cachedResultName": "RHS_lancamentos"
+        },
+        "dataMode": "defineBelow",
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "OBJETO",
+              "value": "={{ $json.OBJETO.toLowerCase() }}"
+            },
+            {
+              "column": "UF",
+              "value": "={{ $json.UF }}"
+            },
+            {
+              "column": "CIDADE",
+              "value": "={{ $json.CIDADE }}"
+            },
+            {
+              "column": "EDITAL",
+              "value": "={{ $json.EDITAL }}"
+            },
+            {
+              "column": "PRODNUM",
+              "value": "={{ $json.PRODNUM }}"
+            },
+            {
+              "column": "MODALIDADE",
+              "value": "={{ $json.MODALIDADE }}"
+            },
+            {
+              "column": "VERSAO",
+              "value": "={{ $json.VERSAO }}"
+            },
+            {
+              "column": "SITUACAO",
+              "value": "={{ $json.SITUACAO }}"
+            },
+            {
+              "column": "ORGAO",
+              "value": "={{ $json.ORGAO }}"
+            },
+            {
+              "column": "CODORGAO",
+              "value": "={{ $json.CODORGAO }}"
+            },
+            {
+              "column": "COMPLORGAO",
+              "value": "={{ $json.COMPLORGAO }}"
+            },
+            {
+              "column": "ENDERECO",
+              "value": "={{ $json.ENDERECO }}"
+            },
+            {
+              "column": "FONE",
+              "value": "={{ $json.FONE }}"
+            },
+            {
+              "column": "FAX",
+              "value": "={{ $json.FAX }}"
+            },
+            {
+              "column": "OBSORGAO",
+              "value": "={{ $json.OBSORGAO }}"
+            },
+            {
+              "column": "TPPRAZO",
+              "value": "={{ $json.TPPRAZO }}"
+            },
+            {
+              "column": "DT_PRAZO",
+              "value": "={{ $json.PRAZO }}"
+            },
+            {
+              "column": "HORA_PRAZO",
+              "value": "={{ $json.PRAZO.split(\" \")[1] }}"
+            },
+            {
+              "column": "VLR ESTIMADO",
+              "value": "={{ $json.VLESTIMADO }}"
+            },
+            {
+              "column": "PREDITAL",
+              "value": "={{ $json.PREDITAL }}"
+            },
+            {
+              "column": "BANCOPG",
+              "value": "={{ $json.BANCOPG }}"
+            },
+            {
+              "column": "SITE",
+              "value": "={{ $json.SITE }}"
+            },
+            {
+              "column": "LINK",
+              "value": "={{ $json.LINK }} , {{ $json[\"LINK1\"] }}"
+            },
+            {
+              "column": "DT_PRAZO",
+              "value": "={{ $json.PRAZO }}"
+            },
+            {
+              "column": "OBS",
+              "value": "={{ $json.OBSFINAL }}"
+            },
+            {
+              "column": "ARQUIVO",
+              "value": "={{ $json.ARQUIVO }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "4660b812-506b-4092-8b2d-59d458c70679",
+      "name": "MySQL",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        -720,
+        1060
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "OPbnohkc2cKgKXIZ",
+          "name": "MySQL RHS"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT \nLANC.*, \n(SELECT group_concat(TAGS1.Tags) FROM RHS_tags TAGS1 WHERE position(TAGS1.Tags IN LANC.OBJETO)>0) AS DCTAG,\nLANC.OBJETO \nFROM RHS_lancamentos LANC\nWHERE EXISTS \n(SELECT TAGS.Tags FROM RHS_tags TAGS WHERE position( TAGS.Tags IN LANC.OBJETO)>0)\nAND LANC.bFiltrado = 0\n",
+        "options": {}
+      },
+      "id": "a52396d1-370d-49f0-bb61-4b3079491c31",
+      "name": "Não Filtrados",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        2280,
+        1240
+      ],
+      "alwaysOutputData": false,
+      "notesInFlow": false,
+      "credentials": {
+        "mySql": {
+          "id": "OPbnohkc2cKgKXIZ",
+          "name": "MySQL RHS"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "batchSize": 1,
+        "options": {}
+      },
+      "id": "8cc7d953-658a-4888-8ba6-6897011f218b",
+      "name": "SplitInBatches-Advanced1",
+      "type": "n8n-nodes-splitinbatches-advanced.splitInBatchesAdvanced",
+      "typeVersion": 1,
+      "position": [
+        2720,
+        1700
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{$node[\"SplitInBatches-Advanced1\"].context[\"noItemsLeft\"]}}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "fdf97d39-3da8-4663-ad71-6a8dcfc6378f",
+      "name": "IF3",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        5660,
+        1720
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "=SELECT * FROM `RHS_tags` WHERE Tags = \"{{ $('SplitInBatches-Advanced1').item.json.DCTAG }}\"",
+        "options": {}
+      },
+      "id": "e6460380-2431-4a19-ac82-db3460d1d6b8",
+      "name": "MySQL1",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        4280,
+        1720
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "OPbnohkc2cKgKXIZ",
+          "name": "MySQL RHS"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "=SELECT * FROM `RHS_categorias` WHERE idCategoria = {{ $json[\"IdCategoriaNR\"] }}",
+        "options": {}
+      },
+      "id": "ea0a10f1-cf60-40bd-a7ef-b6c7bf75ef4f",
+      "name": "MySQL2",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        4480,
+        1720
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "OPbnohkc2cKgKXIZ",
+          "name": "MySQL RHS"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "92bfc6a6-212e-4ffd-9081-a250a60af7a4",
+      "name": "Respond to Webhook1",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [
+        6520,
+        1200
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "d1bccdff-960a-4645-aca8-82c3164f9e06",
+      "name": "When clicking \"Execute Workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -2860,
+        660
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{ $json.TotalTags }}",
+              "operation": "larger",
+              "value2": 1
+            }
+          ]
+        }
+      },
+      "id": "0de152d1-9056-4f0e-a66c-5ec064ae2bff",
+      "name": "SE CONTEM + DE UMA TAG",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        3180,
+        1720
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "=SELECT * FROM `RHS_tags` WHERE Tags = \"{{ $json[\"TagsEncontradas\"] }}\"",
+        "options": {}
+      },
+      "id": "90cce174-d1ef-485c-8fdc-deae19e9536b",
+      "name": "MySQL6",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        4260,
+        1360
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "OPbnohkc2cKgKXIZ",
+          "name": "MySQL RHS"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "=SELECT * FROM `RHS_categorias` WHERE idCategoria = {{ $json[\"IdCategoriaNR\"] }}",
+        "options": {}
+      },
+      "id": "63fc7630-10d6-45f7-867c-2405819c00bc",
+      "name": "MySQL7",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.1,
+      "position": [
+        4460,
+        1360
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "OPbnohkc2cKgKXIZ",
+          "name": "MySQL RHS"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://leads.montreal.com.br/api/1.1/wf/gravaleadrhs",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "PRODNUM",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.PRODNUM }}"
+            },
+            {
+              "name": "=MODALIDADE",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.MODALIDADE }}"
+            },
+            {
+              "name": "EDITAL",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.EDITAL }}"
+            },
+            {
+              "name": "OBJETO",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.OBJETO }}"
+            },
+            {
+              "name": "UF",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.UF }}"
+            },
+            {
+              "name": "CIDADE",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.CIDADE }}"
+            },
+            {
+              "name": "=VERSAO",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.VERSAO }}"
+            },
+            {
+              "name": "SITUACAO",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.SITUACAO }}"
+            },
+            {
+              "name": "ORGAO",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.ORGAO }}"
+            },
+            {
+              "name": "=CODORGAO",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.CODORGAO }}"
+            },
+            {
+              "name": " COMPLORGAO",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.COMPLORGAO }}"
+            },
+            {
+              "name": " ENDERECO",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.ENDERECO }}"
+            },
+            {
+              "name": " COMPLENDERECO",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.COMPLENDERECO }}"
+            },
+            {
+              "name": "FONE",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.FONE }}"
+            },
+            {
+              "name": "FAX",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.FAX }}"
+            },
+            {
+              "name": "OBSORGAO",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.OBSORGAO }}"
+            },
+            {
+              "name": " TPPRAZO",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.TPPRAZO }}"
+            },
+            {
+              "name": "DT_PRAZO",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.DT_PRAZO }}"
+            },
+            {
+              "name": "HORA_PRAZO",
+              "value": "="
+            },
+            {
+              "name": " VLESTIMADO",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json[\"VLR ESTIMADO\"] }}"
+            },
+            {
+              "name": "PREDITAL",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.PREDITAL }}"
+            },
+            {
+              "name": "BANCOPG",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.BANCOPG }}"
+            },
+            {
+              "name": "SITE",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.SITE }}"
+            },
+            {
+              "name": "LINK1",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.LINK }}"
+            },
+            {
+              "name": "DATAREC",
+              "value": "="
+            },
+            {
+              "name": "ARQUIVOREC",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.ARQUIVO }}"
+            },
+            {
+              "name": "OBS",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.OBS }}"
+            },
+            {
+              "name": "CODIGOFILTRO",
+              "value": "={{ $('MySQL7').item.json.idCategoria }}"
+            },
+            {
+              "name": "DATA_PRAZO",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.DT_PRAZO }} am "
+            },
+            {
+              "name": "NomeFiltro",
+              "value": "={{ $('MySQL7').item.json.dcCategoria }}"
+            }
+          ]
+        },
+        "options": {
+          "allowUnauthorizedCerts": true,
+          "response": {}
+        }
+      },
+      "id": "a6726943-aa41-4e04-b1c8-ac735ad633c5",
+      "name": "HTTP Request5",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        5340,
+        1340
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "\nlet total\n\n\nfor (const item of $input.all()) {\n  total = item.json.DCTAG.split(',');\n  item.json.TotalTags = total.length;\n}\n\nreturn $input.all();"
+      },
+      "id": "efbcf5ec-3dab-46d3-bc8d-2bfd27f4db99",
+      "name": "Code2",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        2940,
+        1720
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const newItems = [];\n\nfor (let i=0; i<items.length; i++) {\n  newItems.push({json: {TagsEncontradas:items[i].json.DCTAG.split(',')}});\n}\n\nreturn newItems;"
+      },
+      "id": "b0ce0857-5523-4397-91c9-ac270cdacd11",
+      "name": "Code",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        3320,
+        1360
+      ]
+    },
+    {
+      "parameters": {
+        "batchSize": 1,
+        "options": {}
+      },
+      "id": "9ac3d28c-9909-4f68-939d-a7754d9ba719",
+      "name": "SplitInBatches-Advanced3",
+      "type": "n8n-nodes-splitinbatches-advanced.splitInBatchesAdvanced",
+      "typeVersion": 1,
+      "position": [
+        3780,
+        1360
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "TagsEncontradas",
+        "options": {}
+      },
+      "id": "56831414-9996-4d0f-929f-b64c2f1eac35",
+      "name": "Item Lists1",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 2.2,
+      "position": [
+        3520,
+        1360
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://gtapiwhatsapp.bubbleapps.io/api/1.1/wf/gravatagsencontradas/",
+        "sendBody": true,
+        "contentType": "=json",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "Tag",
+              "value": "={{ $('MySQL6').item.json.Tags.toUpperCase().trim() }}"
+            },
+            {
+              "name": "=Cat",
+              "value": "={{ $json.idCategoria }}"
+            },
+            {
+              "name": "Edital",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.EDITAL }}"
+            },
+            {
+              "name": "PRODNUN",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.PRODNUM }}"
+            },
+            {
+              "name": "TagPesquisa",
+              "value": "={{ $('MySQL6').item.json.Tags }}"
+            }
+          ]
+        },
+        "options": {
+          "allowUnauthorizedCerts": true,
+          "response": {}
+        }
+      },
+      "id": "cab12f91-14f8-4450-80aa-23e1536de8e2",
+      "name": "HTTP Request3",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        4660,
+        1360
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{$node[\"SplitInBatches-Advanced3\"].context[\"noItemsLeft\"]}}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "462e3b15-5255-42a1-bf95-dad2538d4d6d",
+      "name": "IF4",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        4840,
+        1360
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "35dae2c5-af57-48b7-b378-a609fd51f20f",
+      "name": "NoOp1",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        5340,
+        1520
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://gtapiwhatsapp.bubbleapps.io/api/1.1/wf/gravatagsencontradas/",
+        "sendBody": true,
+        "contentType": "=json",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "Tag",
+              "value": "={{ $('MySQL1').item.json.Tags.toUpperCase().trim() }}"
+            },
+            {
+              "name": "=Cat",
+              "value": "={{ $json.idCategoria }}"
+            },
+            {
+              "name": "Edital",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.EDITAL }}"
+            },
+            {
+              "name": "PRODNUN",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.PRODNUM }}"
+            },
+            {
+              "name": "TagPesquisa",
+              "value": "={{ $('MySQL1').item.json.Tags }}"
+            }
+          ]
+        },
+        "options": {
+          "allowUnauthorizedCerts": true,
+          "response": {}
+        }
+      },
+      "id": "a4c16f5c-7d19-4673-80c3-e0039b53fa1e",
+      "name": "HTTP Request",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        4680,
+        1720
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://leads.montreal.com.br/api/1.1/wf/gravaleadrhs",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "PRODNUM",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.PRODNUM }}"
+            },
+            {
+              "name": "=MODALIDADE",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.MODALIDADE }}"
+            },
+            {
+              "name": "EDITAL",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.EDITAL }}"
+            },
+            {
+              "name": "OBJETO",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.OBJETO }}"
+            },
+            {
+              "name": "UF",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.UF }}"
+            },
+            {
+              "name": "CIDADE",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.CIDADE }}"
+            },
+            {
+              "name": "=VERSAO",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.VERSAO }}"
+            },
+            {
+              "name": "SITUACAO",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.SITUACAO }}"
+            },
+            {
+              "name": "ORGAO",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.ORGAO }}"
+            },
+            {
+              "name": "=CODORGAO",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.CODORGAO }}"
+            },
+            {
+              "name": " COMPLORGAO",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.COMPLORGAO }}"
+            },
+            {
+              "name": " ENDERECO",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.ENDERECO }}"
+            },
+            {
+              "name": " COMPLENDERECO",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.COMPLENDERECO }}"
+            },
+            {
+              "name": "FONE",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.FONE }}"
+            },
+            {
+              "name": "FAX",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.FAX }}"
+            },
+            {
+              "name": "OBSORGAO",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.OBSORGAO }}"
+            },
+            {
+              "name": " TPPRAZO",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.TPPRAZO }}"
+            },
+            {
+              "name": "DT_PRAZO",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.DT_PRAZO }}"
+            },
+            {
+              "name": "HORA_PRAZO",
+              "value": "="
+            },
+            {
+              "name": " VLESTIMADO",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json[\"VLR ESTIMADO\"] }}"
+            },
+            {
+              "name": "PREDITAL",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.PREDITAL }}"
+            },
+            {
+              "name": "BANCOPG",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.BANCOPG }}"
+            },
+            {
+              "name": "SITE",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.SITE }}"
+            },
+            {
+              "name": "LINK1",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.LINK }}"
+            },
+            {
+              "name": "DATAREC",
+              "value": "="
+            },
+            {
+              "name": "ARQUIVOREC",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.ARQUIVO }}"
+            },
+            {
+              "name": "OBS",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.OBS }}"
+            },
+            {
+              "name": "CODIGOFILTRO",
+              "value": "={{ $('MySQL2').item.json.idCategoria }}"
+            },
+            {
+              "name": "DATA_PRAZO",
+              "value": "={{ $('SplitInBatches-Advanced1').item.json.DT_PRAZO }} am "
+            },
+            {
+              "name": "NomeFiltro",
+              "value": "={{ $('MySQL2').item.json.dcCategoria }}"
+            }
+          ]
+        },
+        "options": {
+          "allowUnauthorizedCerts": true,
+          "response": {}
+        }
+      },
+      "id": "374f3395-6bec-4cdf-aa8c-03bcbe19b7a6",
+      "name": "HTTP Request7",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        5360,
+        1720
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "b0431c68-a75c-40cb-8e5a-5be3ea306b74",
+      "name": "IF2",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        4040,
+        1380
+      ]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "nome_arquivo",
+              "value": "={{ $node[\"Webhook\"].json[\"body\"][\"FileName\"].replace(\".xml\",\".txt\") }}"
+            },
+            {
+              "name": "qtd_arquivo",
+              "value": "={{ $node.Code1.json[\"total\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "e865fdc6-9094-421c-9789-ae2177c68dce",
+      "name": "SetValorArquivo",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [
+        1520,
+        1240
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json.success }}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "e4a5381d-0b0c-4b7c-8610-2fa996ca9b4a",
+      "name": "IF5",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        2480,
+        1240
+      ]
+    },
+    {
+      "parameters": {
+        "unit": "seconds"
+      },
+      "id": "371c66a0-f5b1-4fe0-ae62-060f046ec43b",
+      "name": "Wait",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        -480,
+        1060
+      ],
+      "webhookId": "21763dd3-3ace-4a91-a961-ff208fe9fc68"
+    },
+    {
+      "parameters": {
+        "jsCode": "//const sentence = 'The quick brown fox jumps over the lazy dog.';\n//const word = 'fox';\n\nconst sentence = $input.item.json.dcObjeto;\nconst word = $input.item.json.findTag;\n//console.log(`The word \"${word}\" ${sentence.includes(word) ? 'True' : 'False'} in the sentence`);\nconst resultado = (`${sentence.includes(word) ? 'true' : 'false'}`);\n$input.item.json.encontrado = resultado;\n\nreturn $input.item;"
+      },
+      "id": "dae02bd7-5095-46ab-a2d2-5d3505646549",
+      "name": "Code3",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -280,
+        760
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "RHS_tags",
+          "mode": "list",
+          "cachedResultName": "RHS_tags"
+        },
+        "returnAll": true,
+        "options": {}
+      },
+      "id": "f0c1fd55-85c8-4da4-8c44-19b714eebfd1",
+      "name": "MySQL3",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.2,
+      "position": [
+        -1520,
+        640
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "OPbnohkc2cKgKXIZ",
+          "name": "MySQL RHS"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "batchSize": 1,
+        "options": {}
+      },
+      "id": "86970ec1-fa05-46bc-93e6-ef9c565cfce8",
+      "name": "SplitInBatches-Advanced-tags",
+      "type": "n8n-nodes-splitinbatches-advanced.splitInBatchesAdvanced",
+      "typeVersion": 1,
+      "position": [
+        -760,
+        740
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{$node[\"SplitInBatches-Advanced1\"].context[\"noItemsLeft\"]}}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "6b1e9c7b-1d0c-4451-bb14-54ecb99ee1cb",
+      "name": "IF6",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -20,
+        760
+      ]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "SITUACAO",
+              "value": "={{ $json[\"SITUACAO\"].trim() }}"
+            },
+            {
+              "name": "OBS1",
+              "value": "={{ $json.OBS }} "
+            },
+            {
+              "name": "CODIGOFILTRO",
+              "value": "={{ $node[\"Webhook\"].json[\"body\"][\"FileName\"].split(\"FIL_\")[1].trim().split(\"_PRC\")[0] }}"
+            },
+            {
+              "name": "LINK1",
+              "value": "={{ $json.LINK.replace('***',' ').replace('***',' ') }}"
+            },
+            {
+              "name": "contador",
+              "value": "={{ $json.contador }}"
+            },
+            {
+              "name": "ARQUIVO",
+              "value": "={{ $node[\"Webhook\"].json[\"body\"][\"FileName\"].replace(\".xml\",\".txt\") }}"
+            },
+            {
+              "name": "OBSFINAL",
+              "value": "={{ ($json.OBS [0] + \"\\n\" +$json.OBS [1] + \"\\n\"+$json.OBS [2] + \"\\n\"+$json.OBS [3] + \"\\n\"+$json.OBS [4] + \"\\n\").replace(\"undefined\",\"\").replace(\"undefined\",\"\").replace(\"undefined\",\"\").replace(\"undefined\",\"\")}}  "
+            }
+          ],
+          "number": [
+            {
+              "name": "TotalArquivo",
+              "value": "={{ $json.total }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c8492729-1009-4a13-9ce4-bb46e58367a9",
+      "name": "SetLinhaRegistro",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [
+        -2120,
+        660
+      ]
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "findTag",
+              "stringValue": "={{ $json.Tags }}"
+            },
+            {
+              "name": "dcObjeto",
+              "stringValue": "={{ $('SetObjetoLoop').item.json.ucaseObjeto }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "0672333d-bc6c-44fa-894e-0c8f6bac709c",
+      "name": "Edit Fields",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        -1080,
+        740
+      ]
+    },
+    {
+      "parameters": {
+        "batchSize": 1,
+        "options": {}
+      },
+      "id": "8fea4ab6-e8cd-4dea-b116-0ff58acc9e6f",
+      "name": "LoopTags",
+      "type": "n8n-nodes-splitinbatches-advanced.splitInBatchesAdvanced",
+      "typeVersion": 1,
+      "position": [
+        -2220,
+        2180
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{$node[\"SplitInBatches-Advanced\"].context[\"LoopTags\"]}}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "b632dec9-ed81-41eb-aefe-41cb3c555e64",
+      "name": "IF7",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -1220,
+        2200
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "e142995c-57fb-4b04-9176-76774860ec0d",
+      "name": "NoOp",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        -1000,
+        2340
+      ]
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "ucaseObjeto",
+              "stringValue": "={{ $json['ARQUIVO.REGISTRO']['OBJETO'].toLowerCase() }}"
+            },
+            {
+              "name": "QueryTable",
+              "stringValue": "RHS_tags"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "2ca856ce-3982-4ff8-90c5-ab979d715910",
+      "name": "TotalContentFiedsReceived",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        -2600,
+        1100
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "={{ $json.QueryTable }}",
+          "mode": "name"
+        },
+        "returnAll": true,
+        "options": {}
+      },
+      "id": "a80889a0-42e7-4b24-a628-6f27251219fa",
+      "name": "MySQL5",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.2,
+      "position": [
+        -2480,
+        2180
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "OPbnohkc2cKgKXIZ",
+          "name": "MySQL RHS"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "6a5143d4-957f-4187-862a-737c13b3c083",
+      "name": "Respond to Webhook",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [
+        -720,
+        2180
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "924c079f-b2be-44c9-b93a-7dd7b242248b",
+              "leftValue": "=",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "ab8fbc0f-4420-47a4-b1d8-5f371fcc3009",
+      "name": "Filter",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2,
+      "position": [
+        -1780,
+        2200
+      ]
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "dcObjeto",
+              "stringValue": "={{ $json.ucaseObjeto }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "786eaa63-b8a5-441b-ae36-864a3b6d68cf",
+      "name": "SetObjetoLoop",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        -1520,
+        820
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "mergeByFields": {
+          "values": [
+            {
+              "field1": "Tags",
+              "field2": "dcObjeto"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c3258b13-f22c-4f10-bf24-b0fa1c73d1ed",
+      "name": "Merge",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2.1,
+      "position": [
+        -1280,
+        740
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "RHS_tags",
+          "mode": "list",
+          "cachedResultName": "RHS_tags"
+        },
+        "returnAll": true,
+        "options": {}
+      },
+      "id": "937f0aa6-a560-4d2c-b796-b00893747949",
+      "name": "MySQL4",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.2,
+      "position": [
+        -3360,
+        1400
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "OPbnohkc2cKgKXIZ",
+          "name": "MySQL RHS"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "chooseBranch",
+        "output": "empty"
+      },
+      "id": "846d3971-97d1-4303-bba8-c29b227cc860",
+      "name": "Merge1",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2.1,
+      "position": [
+        -2360,
+        1260
+      ]
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2024-01-09T17:51:28.381Z",
+      "updatedAt": "2024-01-09T17:51:28.381Z",
+      "id": "B99pjxER5a7qRL6m",
+      "name": "RHS"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2024-01-11T15:26:31.320Z",
+  "versionId": "8f04fc29-e460-4151-8ee4-e4f1c83dab15"
+}
