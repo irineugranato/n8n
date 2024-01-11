@@ -1,0 +1,275 @@
+{
+  "active": false,
+  "connections": {
+    "MySQL": {
+      "main": [
+        [
+          {
+            "node": "Se Usuario Existe",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Se Usuario Existe": {
+      "main": [
+        [
+          {
+            "node": "JWT",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "MySQL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "JWT": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2023-12-01T14:12:37.010Z",
+  "id": "EfaX9SvUaF8FBMgI",
+  "meta": null,
+  "name": "Valida User - Antares",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "validateUser",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "id": "8c9daf3a-7075-44fa-9ed3-b720272db70c",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        640,
+        280
+      ],
+      "webhookId": "b1108e96-c504-45f2-8544-aa7c3664d12e"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "tb_users",
+          "mode": "list",
+          "cachedResultName": "tb_users"
+        },
+        "returnAll": true,
+        "where": {
+          "values": [
+            {
+              "column": "dcEmail",
+              "value": "={{ $json.body.email }}"
+            },
+            {
+              "column": "password",
+              "value": "={{ $json.body.senha }}"
+            }
+          ]
+        },
+        "options": {
+          "outputColumns": [
+            "idUser",
+            "dcUserNome",
+            "dcPrimeiroNome",
+            "nrCPF",
+            "dcEmail",
+            "nrTelefone",
+            "bAtivo",
+            "idPerfil"
+          ]
+        }
+      },
+      "id": "5739fa18-8fa3-48ff-9412-76324fc1dfdb",
+      "name": "MySQL",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.2,
+      "position": [
+        860,
+        280
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "mySql": {
+          "id": "UWP8XIUcGcIlyQvO",
+          "name": "MySQL DBANTARES"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "id": "330b2a23-a7dc-4fd7-a9e0-6d75a8e3ca74",
+      "name": "When clicking \"Execute Workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        620,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "ce2d0bd3-c236-4897-8677-5798591fb365",
+      "name": "Respond to Webhook",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [
+        1860,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{ $json.idUser }}",
+              "operation": "isNotEmpty"
+            }
+          ]
+        }
+      },
+      "id": "3b1be471-0eaf-40d1-a53b-8532586744a8",
+      "name": "Se Usuario Existe",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1100,
+        280
+      ]
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "token"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "3d8d1aea-8adf-4bab-a24e-b4cb73c16c65",
+      "name": "Edit Fields",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        1540,
+        180
+      ]
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "token"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "5fed206a-0b18-4226-8226-2f88c4781897",
+      "name": "Edit Fields1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        1540,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "advancedClaimBuilder": true,
+        "claimsJson": "=[{\n\"dcEmail\":\"{{ $json[\"dcEmail\"] }}\",\n\"dcPrimeiroNome\":\"{{ $json[\"dcPrimeiroNome\"] }}\",\n\"dcUserNome\":\"{{ $json[\"dcUserNome\"] }}\",\n\"idPerfil\":\"{{ $json[\"idPerfil\"] }}\",\n\"idUser\":\"{{ $json[\"idUser\"] }}\",\n\"nrCPF\":\"{{ $json[\"nrCPF\"] }}\",\n\"nrTelefone\":\"{{ $json[\"nrTelefone\"] }}\"\n }]"
+      },
+      "id": "4e35a867-277d-48be-ad02-be860e10cfaf",
+      "name": "JWT",
+      "type": "n8n-nodes-jwt.jwt",
+      "typeVersion": 1,
+      "position": [
+        1320,
+        180
+      ],
+      "credentials": {
+        "jwtSecret": {
+          "id": "emrsOwVLoFgu9wpT",
+          "name": "JWT Secret account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1",
+    "saveDataSuccessExecution": "all",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2023-12-01T14:12:34.808Z",
+      "updatedAt": "2023-12-01T14:12:34.808Z",
+      "id": "JPIKldP1Wsc9LBSf",
+      "name": "ANTARES"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2023-12-05T12:57:59.859Z",
+  "versionId": "162416ab-033c-41f5-b9d6-e8e39189c293"
+}
