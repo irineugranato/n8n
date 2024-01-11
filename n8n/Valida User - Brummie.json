@@ -1,0 +1,151 @@
+{
+  "active": false,
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "MySQL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MySQL": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2023-10-20T17:07:42.499Z",
+  "id": "RlYeQy5pr4n8Ldxw",
+  "meta": null,
+  "name": "Valida User - Brummie",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "user",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "id": "16ccd111-e004-4266-a67e-701ed83343fc",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        300,
+        280
+      ],
+      "webhookId": "d6e0b8a7-343d-44da-8dd7-13a195c0ceb7"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": {
+          "__rl": true,
+          "value": "tbDevices",
+          "mode": "list",
+          "cachedResultName": "tbDevices"
+        },
+        "limit": 1,
+        "where": {
+          "values": [
+            {
+              "column": "id_aparelho",
+              "value": "2147483647"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "2ce48939-e052-4dab-973b-b079bc6b4aac",
+      "name": "MySQL",
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.2,
+      "position": [
+        560,
+        280
+      ],
+      "credentials": {
+        "mySql": {
+          "id": "eLYpx86sDb0P2ebp",
+          "name": "MySQL dbRastreamento Hostinger"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "id": "bf9ad151-89c3-4382-8735-630a593dc0a4",
+      "name": "When clicking \"Execute Workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        320,
+        440
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "61a99f74-1191-48f3-810f-e42e7d5a0041",
+      "name": "Respond to Webhook",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [
+        1000,
+        280
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "let usuario = [];\n\n\nfor (const item of $input.all()) {\n    usuario.push({\n       nrDevice: item.json.id_aparelho,\n       dcNome: item.json.dc_nometitular,\n       nrCPF: item.json.id_cpf,\n  });\n \n}\n\n//return $input.all();\n\n// Return an array containing a single item with a GoodsList field\nreturn [{\n  json: {\n    usuario: usuario\n  }\n}]\n"
+      },
+      "id": "a4d5520a-270f-420d-b6ed-ca62e6933035",
+      "name": "Code",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        780,
+        280
+      ]
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1",
+    "saveDataSuccessExecution": "none",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2023-12-01T14:11:34.706Z",
+      "updatedAt": "2023-12-01T14:11:34.706Z",
+      "id": "f5FqedEavoPE7lXT",
+      "name": "BRUMMIE"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2023-12-05T12:05:01.692Z",
+  "versionId": "97324113-52de-4cf2-bfa4-c47a9bd5d09a"
+}
